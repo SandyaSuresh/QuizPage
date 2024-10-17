@@ -25,6 +25,14 @@ function retrieveData(location){
         }
 
         //dispA.innerHTML = dispA.innerHTML + " 4";
+        var rows = document.getElementById("disp_table").rows;
+        dispA.innerHTML = dispA.innerHTML + rows.length;
+        for(let i = 1; i < rows.length; i++){
+            let loc = rows.item(i).children.item(0).innerHTML;
+            if(response.resolvedAddress.localeCompare(loc) == 0){
+                return;
+            }
+        }
         addRow(response);
     };
     // return xhr.response;
@@ -39,7 +47,7 @@ function displayData(){
 
 function addRow(response){
     var table = document.getElementById("disp_table");
-    var newRow = table.insertRow();
+    let newRow = table.insertRow();
 
     let locCell = newRow.insertCell();
     let locText = document.createTextNode(response.resolvedAddress);
