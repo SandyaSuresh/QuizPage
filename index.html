@@ -7,7 +7,13 @@
         margin-right: auto;
         text-align: center;
     }
-    .title{
+    .center{
+        text-align:center;
+    }
+    div.center_down{
+        position: fixed;
+        left: 35%;
+        bottom: 10px;
         text-align: center;
     }
 </style>>
@@ -20,7 +26,7 @@
 <body>
 
 <div>
-<h3 id="display_data" class="title">Weather Information</h3>
+<h3 id="display_data" class="center">Weather Information</h3>
 <table id="disp_table" class="table">
     <tr>
         <th>Location</th>
@@ -30,6 +36,9 @@
         <th>Conditions</th>
     </tr>
 </table>
+</div>
+
+<div class="center_down">
 <textarea id="req_loc">Location</textarea>
 <button onclick="displayData()">Find</button>
 </div>
